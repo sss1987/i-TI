@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/play/play",
+    "pages/selectColor/selectColor",
+    "pages/coexercise/coexercise"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "i-Ti体育社区",
+    "backgroundColor": "#000000",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "backgroundColor": "#000000",
+    "color": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "resources/photo/shouye.png",
+        "selectedIconPath": "resources/photo/shouye.png"
+      },
+      {
+        "pagePath": "pages/coexercise/coexercise",
+        "text": "一起锻炼",
+        "iconPath": "resources/photo/duanlian.png",
+        "selectedIconPath": "resources/photo/duanlian.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "resources/photo/wode.png",
+        "selectedIconPath": "resources/photo/wode.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

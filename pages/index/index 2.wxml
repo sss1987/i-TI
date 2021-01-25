@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<import src="../common/item.wxml" />
+
+<view class="wrapper">
+  <!-- 顶部导航 begin -->
+  <include src="../common/header.wxml" />
+  <!-- 顶部导航 end -->
+  <view class="nav-scroll">
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <text wx:for="{{section}}" wx:key="id" id="{{item.id}}" catchtap="handleTap"
+        class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}"
+        style=" padding-right:{{topdistance}}px;padding-left:{{topdistance}}px">{{item.name}}</text>
+    </scroll-view>
+  </view>
+</view>
+
+<block wx:if="{{currentId == 1001}}">
+  <text>\n</text>
+  <text>\n</text>
+  <text>\n</text>
+  <text>\n</text>
+
+  <!-- 热门推荐 begin -->
+  <view class="row-container">
+
+    <view class="content-wrapper">
+      <block wx:for="{{hotList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+  <!-- 热门推荐 end -->
+</block>
+
+<!--分区  begin-->
+<block wx:if="{{currentId == 1004}}">
+  <view class="channel">
+    <block wx:for="{{channelname}}" wx:key="channelnum" wx:for-item="channelnumitem">
+      <view class="channel_single" style="width:{{channeldistance}}px">
+        <view class="channel_noname">
+          <image src="{{channelnumitem.icon}}" style="width:{{channeldistance-20}}rpx;height:{{channeldistance-20}}rpx">
+          </image>
+        </view>
+        <view class="channel_name">
+          <text>{{channelnumitem.name}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+<!--分区  end-->
+<!--我的  begin-->
+<block wx:if="{{currentId == 1005}}">
+  <view class="user">
+    <view class="user-wrapper">
+      <view class="flex-cont flex-simple">
+        <view class="s-img">
+          <image src="../../resources/images/avatar.png"></image>
+        </view>
+        <view class="flex-item">
+          <text class="s-tit">游客</text>
+          <text class="s-desc">硬币：-</text>
+        </view>
+      </view>
+    </view>
+    <view class="act-wrapper">
+      <view class="act-item">
+        <view class="bili-icon-history-2">
+          <image src="../../resources/images/历史记录.png"></image>
+        </view>
+        <text class="act-name">历史记录</text>
+        <view class="bili-icon-arrow">
+          <image src="../../resources/images/more.png"></image>
+        </view>
+      </view>
+      <text class="act-tooltip">登陆后可以同步播放记录哦～</text>
+    </view>
+    <view class="account-wrapper">
+      <text class="account-btn">登 录</text>
+      <text class="account-register account-btn">注 册</text>
+      <text class="reg-tooltip">据说用客户端注册可以减少答题哟～</text>
+    </view>
+  </view>
+</block>
+<!--我的  end-->

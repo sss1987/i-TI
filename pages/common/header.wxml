@@ -1,0 +1,15 @@
+<!-- 顶部工具条-begin -->
+<view class="nav-bar">
+    <view class="nav-wrp">
+        
+     
+        <!-- 搜索框 -->
+        <view class="a cell">
+            <view class="nav-icon bili-icon-search">
+              <image src="../../resources/images/sousuo.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 顶部工具条-end -->
+

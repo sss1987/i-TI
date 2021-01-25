@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<import src="../common/item.wxml" />
+
+<view class="wrapper">
+  <!-- 顶部导航 begin -->
+  <include src="../common/header.wxml" />
+  <!-- 顶部导航 end -->
+  <view class="nav-scroll">
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <text wx:for="{{section}}" wx:key="id" id="{{item.id}}" catchtap="handleTap"
+        class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}"
+        style=" padding-right:{{topdistance}}px;padding-left:{{topdistance}}px">{{item.name}}</text>
+    </scroll-view>
+  </view>
+</view>
+
+<block wx:if="{{currentId == 1001}}">
+  <text>\n</text>
+  <text>\n</text>
+  <text>\n</text>
+  <text>\n</text>
+
+  <!--圆形点击框  -->
+<view class="round-click">
+   <navigator url='/pages/addimages/addimages' >上传视频</navigator >
+</view>
+
+  <!-- 热门推荐 begin -->
+  <view class="row-container">
+
+    <view class="content-wrapper">
+      <block wx:for="{{hotList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+  <!-- 热门推荐 end -->
+</block>
+
+<!--分区  begin-->
+<block wx:if="{{currentId == 1004}}">
+  <view class="channel">
+    <block wx:for="{{channelname}}" wx:key="channelnum" wx:for-item="channelnumitem">
+      <view class="channel_single" style="width:{{channeldistance}}px">
+        <view class="channel_noname">
+          <image src="{{channelnumitem.icon}}" style="width:{{channeldistance-20}}rpx;height:{{channeldistance-20}}rpx">
+          </image>
+        </view>
+        <view class="channel_name">
+          <text>{{channelnumitem.name}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+<!--分区  end-->
+<!--我的  begin-->
+<block wx:if="{{currentId == 1005}}">
+  
+</block>
+<!--我的  end-->
